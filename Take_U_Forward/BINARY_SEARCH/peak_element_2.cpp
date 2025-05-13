@@ -57,6 +57,6 @@ int main(){
         }
     }
     vector<int>result = peak1(mat);
-    cout<<"The Position of K is :\t"<<result[0]<<" "<<result[1];
+    cout<<"The Peak element is :\t"<<result[0]<<" "<<result[1];
     return 0;
 }
