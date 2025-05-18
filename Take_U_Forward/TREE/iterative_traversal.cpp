@@ -47,7 +47,8 @@ void postOrder(TreeNode* root){
     s1.push(root);
     
     while (!s1.empty()) {
-        TreeNode* current = s1.top(); s1.pop();
+        TreeNode* current = s1.top();
+        s1.pop();
         s2.push(current);
 
         if (current->left) s1.push(current->left);
