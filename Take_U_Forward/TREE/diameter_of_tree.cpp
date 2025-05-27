@@ -11,6 +11,7 @@ struct TreeNode {
 };
 
 // Bruteforce Approach
+
 int height(TreeNode* root) {
     if (root == NULL) return 0;
     int leftTree = height(root->left);
@@ -32,6 +33,7 @@ int diameter1(TreeNode* root) {
 }
 
 // Optimal Approach
+
 int dia = 0;
 int calc2(TreeNode* root){
     if(root == NULL)return 0;
