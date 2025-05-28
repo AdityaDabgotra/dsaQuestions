@@ -25,7 +25,7 @@ int trav(TreeNode* root){
     max_sum = max(max_sum,lst+rst+root->val);
     return max(lst,rst)+root->val;
 }
-int maxPath2(TreeNode* root){
+int maxPath1(TreeNode* root){
     int temp = trav(root);
     return max_sum;
 }
