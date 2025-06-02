@@ -9,6 +9,7 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
+
 bool mirror(TreeNode* root1,TreeNode* root2){
     if(root1 == NULL && root2 == NULL)return true;
     else if(root1 == NULL || root2 == NULL)return false;
