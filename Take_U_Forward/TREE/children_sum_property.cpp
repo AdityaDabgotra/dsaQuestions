@@ -12,15 +12,15 @@ struct TreeNode {
 
 void ChildrenSum(TreeNode* root){
     if(root == NULL)return ;
-    int child = 0;
 
+    int child = 0;
     if(root->left)child += root->left->val;
     if(root->right)child += root->right->val;
 
     if(child > root->val)root->val = child;
     else{
         if(root->left)root->left->val= root->val;
-        else if(root->right)root->right->val = root->val;
+        if(root->right)root->right->val = root->val;
     }
     ChildrenSum(root->left);
     ChildrenSum(root->right);
