@@ -41,7 +41,7 @@ int main() {
     tree->left->right->left = new TreeNode(6);
     tree->left->right->right = new TreeNode(7);
 
-    cout<<"Zig Zag Traversal of Tree is:\n";
+    cout<<"Bottom View of Tree is:\n";
     vector<int>result = bottomView(tree);
     for (int i = 0; i < result.size(); i++){
         cout<<result[i]<<" ";
