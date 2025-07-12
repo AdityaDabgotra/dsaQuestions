@@ -35,6 +35,23 @@ void flattern2(TreeNode* root){
         curr->left = NULL;
     }
 }
+
+// Using Morris Traversal
+void flattern3(TreeNode* root){
+    TreeNode* curr = root;
+    while(curr != NULL){
+        if(curr->left != NULL){
+            TreeNode* prev = curr->left;
+            while(prev->right){
+                prev = prev->right;
+            }
+            prev->right = curr->right;
+            curr->right = curr->left;
+            curr->left = NULL;
+        }
+        curr = curr->right;
+    }
+}
 int main() {
     TreeNode *tree = new TreeNode(1);
     tree->left = new TreeNode(2);
