@@ -10,14 +10,30 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// Using Recursion
 TreeNode* back = nullptr;
-void flattern(TreeNode* root){
+void flattern1(TreeNode* root){
     if(root == NULL)return;
-    flattern(root->right);
-    flattern(root->left);
+    flattern1(root->right);
+    flattern1(root->left);
     root->right = back;
     root->left = NULL;
     back = root;
+}
+
+// Using Stack
+void flattern2(TreeNode* root){
+    stack<TreeNode*>st;
+    st.push(root);
+    while(!st.empty()){
+        TreeNode* curr = st.top();
+        st.pop();
+        if(curr->right)st.push(curr->right);
+        if(curr->left)st.push(curr->left);
+
+        if(!st.empty())curr->right = st.top();
+        curr->left = NULL;
+    }
 }
 int main() {
     TreeNode *tree = new TreeNode(1);
@@ -28,7 +44,7 @@ int main() {
     tree->left->right->left = new TreeNode(6);
     tree->left->right->right = new TreeNode(7);
 
-    flattern(tree);
+    flattern1(tree);
     while(tree != NULL){
         cout<<tree->val<<" ";
         tree = tree->right;
