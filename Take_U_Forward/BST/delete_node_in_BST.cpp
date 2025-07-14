@@ -50,7 +50,7 @@ int main(){
 
 
     int val;
-    cout<<"Enter the Value to be added:\t";
+    cout<<"Enter the Value to be deleted:\t";
     cin>>val;
     TreeNode* new_root = deleteFromBST(tree,val);
 
