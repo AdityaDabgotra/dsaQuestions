@@ -9,8 +9,17 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-int KthElement(TreeNode* root){
-
+void insert(TreeNode* root ,vector<int>&v,int k){
+    if(root == NULL)return;
+    insert(root->left,v,k);
+    v.push_back(root->val);
+    insert(root->right,v,k);
+}
+int KthElement(TreeNode* root,int k){
+    vector<int>result;
+    insert(root,result,k);
+    return result[k-1];
+    
 }
 
 int main(){
@@ -24,10 +33,10 @@ int main(){
     tree->right->right = new TreeNode(8);
 
 
-    int val;
-    cout<<"Enter the Value to be added:\t";
-    cin>>val;
-    TreeN = deleteFromBST(tree,val);
+    int k;
+    cout<<"Enter the Value of K:\t";
+    cin>>k;
+    int result = KthElement(tree,k);
 
     return 0;
 }
