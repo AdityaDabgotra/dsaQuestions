@@ -26,6 +26,10 @@ void traverse(vector<vector<int>>&arr,int i,int j){
             q.push({curr.first+1,curr.second-1});
             arr[curr.first+1][curr.second-1] = -1;
         }
+        if(curr.second+1 < cols && curr.first-1 >= 0 && arr[curr.first-1][curr.second+1] == 1){
+            q.push({curr.first-1,curr.second+1});
+            arr[curr.first-1][curr.second+1] = -1;
+        }
     }
 }
 
