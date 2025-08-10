@@ -8,8 +8,7 @@ vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc, int co
     queue<pair<int, int>> q;
     q.push({sr, sc});
     image[sr][sc] = color;
-    while (!q.empty())
-    {
+    while (!q.empty()){
         auto curr = q.front();
         q.pop();
         if (curr.second + 1 < image[0].size() && image[curr.first][curr.second + 1] == initial)
