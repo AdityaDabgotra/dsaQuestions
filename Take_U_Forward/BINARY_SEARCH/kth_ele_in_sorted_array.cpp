@@ -3,18 +3,18 @@ using namespace std;
 
 // Bruteforce Approach
 int merge1(vector<int>&arr1,vector<int>&arr2){
-    int s1 = arr1.size();
-    int s2 = arr2.size();
-    vector<int>result;
-    int left = 0,right = 0;
-    while(left < s1 && right < s2){
-        if(arr1[left] >= arr2[right]){
-            result.push_back(arr1[left++]);
-        }
-        else{
-            result.push_back(arr2[right++]);
-        }
-    }
+   int s1 = arr1.size();
+   int s2 = arr2.size();
+   vector<int>result;
+   int left = 0,right = 0;
+   while(left < s1 && right < s2){
+      if(arr1[left] >= arr2[right]){
+         result.push_back(arr1[left++]);
+      }
+      else{
+         result.push_back(arr2[right++]);
+      }
+   }
    while(left < s1){
       result.push_back(arr1[left++]);
    }
