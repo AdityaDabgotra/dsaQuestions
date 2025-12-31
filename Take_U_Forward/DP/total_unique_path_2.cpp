@@ -98,6 +98,7 @@ int main(){
         }
         
     }
+    cout<<"The total unique paths are "<<uniquePathsWithObstacles4(grid);
     
     return 0;
 }
