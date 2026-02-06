@@ -16,7 +16,7 @@ int minimumTotal1(vector<vector<int>>& tri) {
     return cal(tri,0,0);
 }
 
-// Optimised solution using memoisation
+// Optimized solution using memoisation
 int find(vector<vector<int>>&tri,vector<vector<int>>&dp,int i,int j){
     if(i >= tri.size() || j >= tri[i].size())return INT_MAX;
     
@@ -37,7 +37,7 @@ int minimumTotal2(vector<vector<int>>& tri){
     return find(tri,dp,0,0);
 }
 
-// Optimised solution using tabulation
+// Optimized solution using tabulation
 int minimumTotal3(vector<vector<int>>tri){
     int n = tri.size();
     for (int i = n - 2; i >= 0; i--) {
@@ -48,7 +48,7 @@ int minimumTotal3(vector<vector<int>>tri){
     return tri[0][0];
 }
 
-// Optimised space complexity over tabulation
+// Optimized space complexity over tabulation
 int minimumTotal4(vector<vector<int>>& tri){
     int n = tri.size();
     vector<int> dp = tri[n - 1];
